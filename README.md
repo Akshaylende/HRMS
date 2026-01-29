@@ -13,6 +13,8 @@ step 2 - Install Dependencies like flask and flask-sqlalchemy from the terminal
 
 
 ## Spinning the server
+To run the backend server, ensure your're in virtual environment and installed all the required dependencies before hand.
+In the root directory, run 
 ``` python run.py ```
 
 
@@ -21,12 +23,21 @@ HRMS-LITE
   |
   |------/app
            |
-           |---- init.py
+           |---- init.py       # App instance and database connection
+           |                    
+           |---- routes.py     # Requests handling
            |
-           |---- routes.py
+           |---- models.py     # Database Schemas
+           |
+           |---- services.py   # Definition for helper functions
   |         
-  |------ .gitignore
+  |------/instance             # sqlite db file
+           |
+           |---- hrms.db    
   |
-  |------ run.py
+  |------ .gitignore           # gitignore file to untrack git file
   |
-  |------ README.md
+  |------ run.py               # starting point for webapp
+  |
+  |------ README.md            
+
