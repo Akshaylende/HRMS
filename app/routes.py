@@ -1,6 +1,6 @@
 from flask import request
 from app.init import flask_app
-from app.services import add_employee_logic, mark_attendance_logic
+from app.services import add_employee_logic, mark_attendance_logic, get_all_employees
 
 @flask_app.route('/')
 def home():
@@ -8,10 +8,15 @@ def home():
 
 
 # Request Handling for Creating an employee entry in our DB 
-@flask_app.route('/api/employees', methods=['POST'])
+@flask_app.route('/api/employee', methods=['POST'])
 def add_employee():
     return add_employee_logic(request.json)
 
+
+@flask_app.route('/api/employees')
+def get_employees():
+    return get_all_employees()
+   
 
 # Request Handling for marking attendence for an existing employee
 @flask_app.route('/api/attendance', methods=['POST'])

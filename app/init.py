@@ -1,8 +1,12 @@
 from flask import Flask
 from flask_sqlalchemy import SQLAlchemy
+from flask_cors import CORS
 
 # creating an instance of flask app here 
 flask_app = Flask(__name__)
+
+# Enabling CORS for the frontend port
+CORS(flask_app, resources={r"/api/*": {"origins": "http://localhost:1234"}})
 
 # setting up database connections
 flask_app.config['SQLALCHEMY_DATABASE_URI'] = 'sqlite:///hrms.db'
