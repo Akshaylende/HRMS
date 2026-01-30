@@ -1,6 +1,6 @@
 from flask import request
 from app.init import flask_app
-from app.services import add_employee_logic, mark_attendance_logic, get_all_employees
+from app.services import add_employee_logic, mark_attendance_logic, get_all_employees, delete_employee_data, attendance_data
 
 @flask_app.route('/')
 def home():
@@ -22,3 +22,12 @@ def get_employees():
 @flask_app.route('/api/attendance', methods=['POST'])
 def mark_attendance():
     return mark_attendance_logic(request.json)
+
+@flask_app.route('/api/employees/<int:id>', methods=['DELETE'])
+def delete_employee(id):
+    return delete_employee_data(id)
+
+
+@flask_app.route('/api/attendance/today', methods=['GET'])
+def get_today_attendance():
+    return attendance_data()
