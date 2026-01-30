@@ -3,7 +3,9 @@ import axios from 'axios';
 import { UserPlus, Calendar, Users, Trash2, CheckCircle, XCircle, AlertCircle } from 'lucide-react';
 import './styles.css'; // Ensure this is imported
 
-const API = axios.create({ baseURL: 'http://127.0.0.1:5000/api' });
+// Replace the old API line with this:
+const API_BASE_URL = process.env.API_URL || 'http://127.0.0.1:5000/api';
+const API = axios.create({ baseURL: API_BASE_URL });
 
 export default function App() {
   const [employees, setEmployees] = useState([]);
