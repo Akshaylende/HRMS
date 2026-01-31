@@ -8,8 +8,11 @@ HRMS is a webapp which simulates a basic internal HR tool, focusing on essential
 step 1 - Create a virtual environment from the terminal by running 
 ``` python -m venv venv ```
 
-step 2 - Install Dependencies like flask and flask-sqlalchemy from the terminal 
-``` pip install flask flask-sqlalchemy ```
+step 2 - Install Dependencies like flask, jsonify and flask-sqlalchemy from the terminal 
+``` pip install flask flask-sqlalchemy jsonify ```
+
+step 3 - Install frontend dependencies in the hrms-frontend directory
+``` npm init ```
 
 
 ## Spinning the server
